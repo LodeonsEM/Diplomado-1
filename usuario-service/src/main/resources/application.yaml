@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: usuario-service
+    data:
+        mongodb:
+            uri: mongodb+srv://enriquemarestcp:Lodeons1234@cluster0.cv2so.mongodb.net/usuarios
+            database: usuarios
+            username: enriquemarestcp
+            password: Lodeons1234
+server:
+    port: 8081
+

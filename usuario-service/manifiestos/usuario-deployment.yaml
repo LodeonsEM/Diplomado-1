@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usuario-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usuario-service
+  template:
+    metadata:
+      labels:
+        app: usuario-service
+    spec:
+      containers:
+        - name: usuario-service
+          image: lodeonsmm/usuario-service:v1
+          ports:
+            - containerPort: 8081
+          
