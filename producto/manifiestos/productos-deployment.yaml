@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: productos
-          image: lodeonsmm/productos:v2
+          image: lodeonsmm/productos:v3
           ports:
             - containerPort: 8081
           
