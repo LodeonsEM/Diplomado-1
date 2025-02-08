@@ -15,6 +15,7 @@ pipeline {
                 echo "** starting notificaciones compilation"
                 mvn clean package
                 echo "** end notificaciones compilation"
+                '''
             }
         }
     }  
