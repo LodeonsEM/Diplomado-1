@@ -7,12 +7,7 @@ metadata:
 spec:
   containers:
     - name: productos
-<<<<<<< HEAD
-      image: lodeonsmm/productos:v3
-=======
       image: lodeonsmm/productos:v4
->>>>>>> 517f52a95923d992b6b32400e5d755bb0afccdf7
       ports:
         - containerPort: 8081
-  imagePullSecrets:
-  - name: dockerhub-secret
+
