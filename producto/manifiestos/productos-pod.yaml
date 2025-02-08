@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: productos
-      image: lodeonsmm/productos:v3
+      image: lodeonsmm/productos:v4
       ports:
         - containerPort: 8081
   imagePullSecrets:
