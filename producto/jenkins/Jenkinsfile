@@ -8,7 +8,7 @@ pipeline {
         stage ('Initialize') {
             steps {
                 sh '''
-                cd Diploamado/
+                cd Diplomado/
                 cd producto/
                 echo "PATH = ${PATH}"
                 echo "JAVA_HOME = ${JAVA_HOME}"
