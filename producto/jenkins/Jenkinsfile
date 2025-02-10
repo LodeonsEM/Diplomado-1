@@ -5,7 +5,7 @@ pipeline {
         jdk 'JDK17'
     }
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('docker-registry')
+        DOCKERHUB_CREDENTIALS = credentials('EMM-docker-registry')
         DOCKER_IMAGE = 'lodeonsmm/productos:V5'
     }
     stages {
