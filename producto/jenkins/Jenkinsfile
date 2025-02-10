@@ -26,7 +26,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sh '''
-                pwd
+                cd producto/
                 sudo docker build -t ${DOCKER_IMAGE} .
                 '''
             }
