@@ -4,17 +4,18 @@ metadata:
   generateName: git-clone-
   namespace: diploe2-emm
 spec:
- taskRef:
-   kind: Task
-   name: git-clone
- podTemplate:
-   securityContext:
-     fsGroup: 65532
- params:
- - name: url
-   value: "https://github.com/LodeonsEM/Diplomado.git"
- - name: deleteExisting
-   value: "true"
- workspaces:
-   - name: output
-     emptyDir: {}
+  taskRef:
+    kind: Task
+    name: git-clone
+  podTemplate:
+    securityContext:
+      fsGroup: 65532
+  params:
+    - name: url
+      value: https://github.com/LodeonsEM/Diplomado.git
+    - name: deleteExisting
+      value: "true"
+  workspaces:
+    - name: output
+      persistentVolumeClaim:
+        claimName: workspace 
