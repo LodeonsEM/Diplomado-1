@@ -1,8 +1,8 @@
-Tekton
+# Tekton
 -  Es un marco de código abierto para construir y desplegar software de manera automatizada en entornos de contenedores.
 -  Se centra en la creación de pipelines declarativos y reutilizables para la automatización de tareas en el desarrollo y despliegue de aplicaciones.
 
-* Elementos principales para creacion de una tarea de tekton
+# Elementos principales para creacion de una tarea de tekton
 Step:
 - Unidad más pequeña para ejecutar comandos o scripts
 - Un contenedor
@@ -23,7 +23,7 @@ Se genera un archivo llamado "hello-word-task.yaml" con la tarea para mostrar el
 ![image](https://github.com/user-attachments/assets/9373da38-74ef-45f2-9ff5-26a446ccc60d)
 
 Se realiza el despliegue de la tarea hello-word-task.yaml con el siguiente comando:
-# kubectl apply -f hello-world-task.yaml -n diploe2-emm
+kubectl apply -f hello-world-task.yaml -n diploe2-emm
 
 Se verifica que la task fue desplegada:
 ![image](https://github.com/user-attachments/assets/1dd2c70e-dc52-46e6-a391-507e9dc192c5)
@@ -32,7 +32,7 @@ Se genera un archivo llamado "hello-word-run.yaml" el cual ejecutara la tarea an
 ![image](https://github.com/user-attachments/assets/c2cd1b22-468e-4e6e-b31b-007bc889d47c)
 
 Se realiza el despliegue de taskrun hello-word-run.yaml con el siguiente comando:
-# kubectl create -f hello-word-run.yaml -n diploe2-emm
+kubectl create -f hello-word-run.yaml -n diploe2-emm
 
 Se verifica que el taskrun se ejecutara correctamente:
 ![image](https://github.com/user-attachments/assets/b12f6dc4-d0e8-4759-afcd-1b8c947980c7)
