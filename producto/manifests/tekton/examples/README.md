@@ -3,10 +3,10 @@
 -  Se centra en la creación de pipelines declarativos y reutilizables para la automatización de tareas en el desarrollo y despliegue de aplicaciones.
 
 # Elementos principales para creacion de una tarea de tekton
-Step:
+*Step:
 - Unidad más pequeña para ejecutar comandos o scripts
 - Un contenedor
-Task:
+*Task:
 - Una secuencia de pasos
 - Un Pod con anulación del punto de entrada
 - Una abstracción de componente reusable
