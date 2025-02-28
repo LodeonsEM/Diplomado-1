@@ -71,19 +71,19 @@ Verificamos si el taskrun se encuentra en ejecucion
 Verificamos los pods creados por la task
 ![image](https://github.com/user-attachments/assets/85412a64-7702-4543-ad72-9efe020d2e7b)
 
-Revisamos los logs que se generaron en los pods con el resultado de las tarea en este caso enlista el contenido del directorio
+se revisa los logs que se generaron en los pods con el resultado de las tarea en este caso enlista el contenido del directorio
 ![image](https://github.com/user-attachments/assets/de053888-cad5-49b7-963c-bf6b1a478c8d)
 
 Una vez que se verifico que el contenido del directorio es el correcto instalamos en el namespace el task de maven con el siguiente comando
 kubectl apply -f https://api.hub.tekton.dev/v1/resource/tekton/task/maven/0.4/raw -n diploe2-emm
 
-Verificamos que la tarea se encuentre en el namespace
+Se verifica que la tarea se encuentre en el namespace
 ![image](https://github.com/user-attachments/assets/5294423d-bf0a-4c72-823d-3fd7e78d1893)
 
-Generamos el manifiesto maven-taskrun.yaml que generara el .jar de la aplicacion
+Se Genera el manifiesto maven-taskrun.yaml que generara el .jar de la aplicacion
 ![image](https://github.com/user-attachments/assets/d441cc55-3b75-42c9-a1dd-3423968c6501)
 
-Creamos el taskrun de maven-taskrun.yaml con els iguiente comando
+Creamos el taskrun de maven-taskrun.yaml con el siguiente comando
 kubectl create -f maven-taskrun.yaml -n diploe2-emm
 
 Verificamos si el taskrun se encentra en ejecucion
@@ -97,6 +97,32 @@ Revisamos los logs de los pods generados por las tarea de maven
 
 Construyendo el .jar de la aplicacion
 ![image](https://github.com/user-attachments/assets/955f5cd2-a051-434a-90e7-0c051163e771)
+
+Una vez creado el .jar de la aplicacion se contenderizara en una imagen Docker y se subira al repositorio dockerhub
+
+Se debe de instalar la task "buildah" con el sigiente comando
+kubectl apply -f https://api.hub.tekton.dev/v1/resource/tekton/task/buildah/0.9/raw
+
+Se verifica que la tarea se encuentre en el namespace
+![image](https://github.com/user-attachments/assets/ba982ac0-4c55-4ca9-be7d-a26e0ae18315)
+
+Se genera el manifiesto build-taskrun.yaml que generara la imagen docker y la subira a dockerhub
+![image](https://github.com/user-attachments/assets/c10a31f1-a1cb-4c69-91cb-a1a7c9829d16)
+
+Se genere el secret para autentificarce en el repositorio de dockerhub al subir la imagen docker
+![image](https://github.com/user-attachments/assets/f353dbc2-defe-4238-92ae-f6be01e19ff6)
+
+Creamos el taskrun de build-taskrun.yaml con el siguiente comando
+kubectl create -f build-taskrun.yaml -n diploe2-emm
+
+Verificamos si el taskrun se encentra en ejecucion
+![image](https://github.com/user-attachments/assets/269f2c8b-4391-4e4e-9d03-cd2ff72569a8)
+
+Revisamos los logs de los pods generados por las tarea de buildah
+![image](https://github.com/user-attachments/assets/2d6218ad-a860-493e-81d1-91d97e9e5dd6)
+
+Se revisa en el repositorio de dockerhub se la imagen de contenedor fue subida
+![image](https://github.com/user-attachments/assets/fd545f3a-9601-4e96-b674-5974cfaa1d84)
 
 
 
